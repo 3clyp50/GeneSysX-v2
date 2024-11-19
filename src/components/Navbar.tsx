@@ -12,7 +12,9 @@ const Navbar: React.FC<NavbarProps> = ({ isDarkMode, toggleDarkMode }) => {
       <div className="h-full flex items-center justify-between">
         <div className="flex items-center">
           <div className="h-8 w-auto">
-            {/* {isDarkMode ? (
+            {/* 
+               properly commented out as this is managed by Sidebar.tsx
+                {isDarkMode ? (
               <img 
                 src="/helix-matrix-dark.png" 
                 alt="GeneSysX Logo" 

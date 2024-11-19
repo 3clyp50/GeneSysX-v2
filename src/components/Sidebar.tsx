@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import {
-  BeakerIcon,
-  ChartBarIcon,
-  CpuChipIcon,
   HomeIcon,
   ChatBubbleLeftRightIcon,
   DocumentTextIcon,
@@ -11,8 +8,14 @@ import {
   Bars3Icon,
   LockOpenIcon,
   LockClosedIcon,
-  BookOpenIcon,
 } from '@heroicons/react/24/outline';
+import { BioPromptIcon } from './ui/icons/BioPromptIcon';
+import { GeneticConstructorIcon } from './ui/icons/GeneticConstructorIcon';
+import { GymSysXIcon } from './ui/icons/GymSysXIcon';
+import { MarimoIcon } from './ui/icons/MarimoIcon';
+import { PhylogeneticAnalysisIcon } from './ui/icons/PhylogeneticAnalysisIcon';
+import { ProteinAnalysisIcon } from './ui/icons/ProteinAnalysisIcon';
+import { SequenceAnalysisIcon } from './ui/icons/SequenceAnalysisIcon';
 
 interface SidebarProps {
   isOpen: boolean;
@@ -66,42 +69,42 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar, isDarkMode }) 
     { 
       name: 'Sequence Analysis', 
       to: '/sequence-analysis', 
-      icon: <BeakerIcon className="h-5 w-5" />,
+      icon: <SequenceAnalysisIcon className="h-5 w-5" />,
       category: 'Bioinformatics'
     },
     { 
       name: 'Phylogenetic Analysis', 
       to: '/phylogenetic-analysis', 
-      icon: <BeakerIcon className="h-5 w-5" />,
+      icon: <PhylogeneticAnalysisIcon className="h-5 w-5" />,
       category: 'Bioinformatics'
     },
     { 
       name: 'Protein Analysis', 
       to: '/protein-analysis', 
-      icon: <BeakerIcon className="h-5 w-5" />,
+      icon: <ProteinAnalysisIcon className="h-5 w-5" />,
       category: 'Bioinformatics'
     },
     { 
       name: 'GymSysX', 
       to: '/gym-sysx', 
-      icon: <ChartBarIcon className="h-5 w-5" />,
+      icon: <GymSysXIcon className="h-5 w-5" />,
       category: 'Machine Learning'
     },
     { 
       name: 'BioPrompt', 
       to: '/bio-prompt', 
-      icon: <ChartBarIcon className="h-5 w-5" />,
+      icon: <BioPromptIcon className="h-5 w-5" />,
       category: 'Machine Learning'
     },
     { 
       name: 'Genetic Constructor', 
       to: '/genetic-constructor', 
-      icon: <CpuChipIcon className="h-5 w-5" />,
+      icon: <GeneticConstructorIcon className="h-5 w-5" />,
       category: 'Synthetic Biology'
     },
     { 
       name: 'Marimo Notebook',
-      icon: <BookOpenIcon className="h-4 w-4" />,
+      icon: <MarimoIcon className="h-4 w-4" />,
       to: '/marimo-notebook',
       category: 'General Tools & APIs'
     },
@@ -135,10 +138,14 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen, toggleSidebar, isDarkMode }) 
       >
         <div className="flex h-16 items-center justify-between px-4 border-b border-slate-200 dark:border-slate-700">
           <div className="flex items-center">
-            <img src="/helix-matrix-dark.png" alt="Logo" className="h-15 w-15" />
-            <span className="ml-2 text-xl font-semibold text-slate-900 dark:text-white">
-            </span>
-          </div>
+            <img 
+                src={isDarkMode ? "/helix-matrix-dark.png" : "/helix-matrix-light.png"} 
+                alt="Logo" 
+                className="h-15 w-15" 
+              />
+              <span className="ml-2 text-xl font-semibold text-slate-900 dark:text-white">
+              </span>
+            </div>
           <div className="flex items-center gap-2">
             <button
               onClick={toggleLock}
